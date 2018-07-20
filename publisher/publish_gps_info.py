@@ -38,5 +38,5 @@ data = 'GPS Info'
 while True:
     random_edge = inc[random.randint(0, edges - 1)]
     client.publish(topic_path, data=data.encode('utf-8'), start_node=random_edge[0], end_node=random_edge[1],
-                   speed=str(random.randint(args['min_speed'], args['max_speed'])))
-    time.sleep(args['delay'])
+                   speed=str(random.randint(int(args['min_speed']), int(args['max_speed']))))
+    time.sleep(int(args['delay']))
